@@ -1,12 +1,8 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
 const Search = () => {
-  return (
-    <View>
-      <Text>Search</Text>
-    </View>
-  );
+  return <View className="flex-1 bg-[#0f0D10]"></View>;
 };
 
 export default Search;
