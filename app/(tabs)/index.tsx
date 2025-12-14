@@ -35,7 +35,7 @@ export default function Index() {
         }}
         showsVerticalScrollIndicator={false}
       >
-        <Image source={icons.logo} className="w-16 h-12 mb-10 mt-20 mx-auto" />
+        <Image source={icons.logo} className="mb-10 mt-20 mx-auto" />
 
         {isMoviesLoading ? (
           <ActivityIndicator />
@@ -55,15 +55,7 @@ export default function Index() {
 
               <FlatList
                 data={movies}
-                renderItem={({ item }) => (
-                  <MovieCard
-                    id={item.id}
-                    poster_path={item.poster_path}
-                    title={item.title}
-                    vote_average={item.vote_average}
-                    release_date={item.release_date}
-                  />
-                )}
+                renderItem={({ item }) => <MovieCard {...item} />}
                 keyExtractor={(item) => item.id.toString()}
                 numColumns={3}
                 scrollEnabled={false}
